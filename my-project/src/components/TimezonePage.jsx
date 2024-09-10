@@ -10,7 +10,6 @@ const TimezonePage = () => {
     date: moment().tz('America/New_York').format('YYYY-MM-DD')
   });
   const [isEditing, setIsEditing] = useState(false);
-  const [selectedTimezone, setSelectedTimezone] = useState(currentTimezone.location);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -42,12 +41,12 @@ const TimezonePage = () => {
   };
 
   const handleTimezoneSelect = (timezone) => {
-    setSelectedTimezone(timezone);
     setCurrentTimezone({
       location: timezone,
       time: moment().tz(timezone).format('hh:mm A'),
       date: moment().tz(timezone).format('YYYY-MM-DD')
     });
+    setSearchTerm(''); // Clear search term after selection
     setDropdownOpen(false);
     setIsEditing(false);
   };
@@ -79,7 +78,6 @@ const TimezonePage = () => {
                   <input
                     type="text"
                     value={searchTerm}
-                    onClick={handleTimezoneClick}
                     onChange={handleSearchChange}
                     className="bg-gray-700 text-white p-2 rounded w-full"
                     placeholder="Type to search..."
@@ -125,10 +123,10 @@ const TimezonePage = () => {
           <div className="flex-shrink-0 bg-gray-800 p-6 rounded-lg shadow-md flex items-center justify-center min-w-[200px]">
             <button
               onClick={() => alert('Add timezone functionality not yet implemented')}
-              className="bg-gray-500 text-white py-2 px-4 rounded hover:bg-gray-600 flex items-center"
+              className="bg-gray-800 text-white py-2 px-4 rounded hover:bg-gray-600 flex items-center"
             >
-              <span className="text-2xl mr-2 text-gray-800">+</span>
-              <p className="text-gray-800">Add Timezone</p>
+              <span className="text-2xl mr-2 text-gray-500">+</span>
+              <p className="text-gray-500 text-lg text-bold">Add Timezone</p>
             </button>
           </div>
         </div>
