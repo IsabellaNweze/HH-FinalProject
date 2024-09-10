@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGlobe, faCalendarAlt, faBell, faClock, faAppleWhole, faStopwatch, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
-const Sidebar = () => {
+const Sidebar = ({}) => {
   const [isOpen, setIsOpen] = useState(true); // Start with the sidebar open
 
   return (
