@@ -3,15 +3,13 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGlobe, faCalendarAlt, faBell, faClock, faAppleWhole, faStopwatch, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
-const Sidebar = ({}) => {
-  const [isOpen, setIsOpen] = useState(true); // Start with the sidebar open
-
+const Sidebar = ({ isOpen, toggleSidebar }) => {
   return (
     <div
       className={`fixed top-0 left-0 h-full bg-gray-900 text-white shadow-md transition-all duration-300 ${isOpen ? 'w-64' : 'w-16'} z-40`}
     >
       <button
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={toggleSidebar}
         className="absolute top-4 right-4 p-2 text-white bg-gray-800 rounded-full shadow-md hover:bg-gray-700 focus:outline-none"
       >
         <FontAwesomeIcon icon={isOpen ? faTimes : faBars} />
