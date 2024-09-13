@@ -69,7 +69,7 @@ const TimezonePage = () => {
       <Sidebar isOpen={isOpen} toggleSidebar={toggleSidebar} />
 
       <div className={`flex-1 p-4 md:p-8 transition-all duration-300 transform ${isOpen ? 'md:ml-64' : 'md:ml-16'} md:pl-4`}>
-        <div className="flex flex-wrap gap-4">
+        <div className="flex flex-wrap ml-16 gap-4">
           {timezonesList.map((tz) => (
             <div key={tz.id} className="bg-gray-800 p-4 rounded-lg shadow-md flex-1 min-w-[200px] max-w-[350px] relative">
               <h2 className="text-white text-sm md:text-md mb-2">
