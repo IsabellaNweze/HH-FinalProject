@@ -30,13 +30,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
           <FontAwesomeIcon icon={faAppleWhole} className={`text-gray-500 text-2xl mr-2 ${!isOpen ? 'hidden' : 'block'}`} />
           <span className={`transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0'}`}>Pomodoro</span>
         </Link>
-        <Link
-          to="/planner"
-          className={`flex items-center mb-4 p-2 rounded transition-all duration-300 ${isOpen ? 'w-full justify-start px-4' : 'justify-center w-16'}`}
-        >
-          <FontAwesomeIcon icon={faCalendarAlt} className={`text-gray-500 text-2xl mr-2 ${!isOpen ? 'hidden' : 'block'}`} />
-          <span className={`transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0'}`}>Daily Planner</span>
-        </Link>
+   
         <Link
           to="/worldclock"
           className={`flex items-center mb-4 p-2 rounded transition-all duration-300 ${isOpen ? 'w-full justify-start px-4' : 'justify-center w-16'}`}
@@ -44,13 +38,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
           <FontAwesomeIcon icon={faClock} className={`text-gray-500 text-2xl mr-2 ${!isOpen ? 'hidden' : 'block'}`} />
           <span className={`transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0'}`}>World Clock</span>
         </Link>
-        <Link
-          to="/timer"
-          className={`flex items-center mb-4 p-2 rounded transition-all duration-300 ${isOpen ? 'w-full justify-start px-4' : 'justify-center w-16'}`}
-        >
-          <FontAwesomeIcon icon={faBell} className={`text-gray-500 text-2xl mr-2 ${!isOpen ? 'hidden' : 'block'}`} />
-          <span className={`transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0'}`}>Timer</span>
-        </Link>
+     
         <Link
           to="/stopwatch"
           className={`flex items-center mb-4 p-2 rounded transition-all duration-300 ${isOpen ? 'w-full justify-start px-4' : 'justify-center w-16'}`}

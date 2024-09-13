@@ -129,20 +129,20 @@ const PomodoroPage = () => {
   });
 
   return (
-    <div className="bg-black min-h-screen flex">
+    <div className="bg-black min-h-screen flex flex-col lg:flex-row">
       <Sidebar isOpen={isOpen} toggleSidebar={toggleSidebar} />
 
       <div
-        className={`flex-1 p-8 transition-all duration-300 transform ${
-          isOpen ? 'ml-64' : 'ml-16'
+        className={`flex-1 p-4 lg:p-8 transition-all duration-300 transform ${
+          isOpen ? 'lg:ml-64' : 'lg:ml-16'
         }`}
       >
-        <div className="flex h-full gap-4">
+        <div className="flex h-full gap-4 flex-col lg:flex-row">
           {/* First card: 40% width */}
           <div className="flex-1 bg-gray-800 p-6 rounded-lg shadow-md flex flex-col h-full" style={{ flex: '2 1 40%' }}>
-            <div className="flex justify-between items-center">
+            <div className="flex flex-col lg:flex-row justify-between items-center mb-4">
               <p
-                className="text-white text-sm cursor-pointer mr-[-2] hover:bg-gray-700 p-2 rounded transition duration-300"
+                className="text-white text-sm cursor-pointer hover:bg-gray-700 p-2 rounded transition duration-300 mb-2 lg:mb-0"
                 onClick={() => console.log("Pending clicked")}
               >
                 Pending
