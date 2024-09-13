@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import moment from 'moment-timezone';
 import Sidebar from './Sidebar';
 import { loadTimezonesFromLocalStorage, saveTimezonesToLocalStorage } from './timezoneStorage';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
+
 
 const TimezonePage = () => {
   const [isOpen, setIsOpen] = useState(true);
@@ -114,9 +117,9 @@ console.log(timezonesList);
               <button
                 type="button"
                 onClick={() => removeTimezone(tz.id)}
-                className="absolute top-2 right-2 text-gray-500 hover:text-red-500"
+                className="absolute top-2 right-2 text-gray-500 hover:text-balck-500"
               >
-                🗑
+                 <FontAwesomeIcon icon={ faTrash} />
               </button>
             </div>
           ))}
