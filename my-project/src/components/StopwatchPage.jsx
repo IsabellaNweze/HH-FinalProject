@@ -72,55 +72,54 @@ const StopwatchPage = () => {
       <Sidebar isOpen={isOpen} toggleSidebar={toggleSidebar} />
 
       <div
-        className={`flex-1 p-8 transition-all duration-300 transform ${
-          isOpen ? 'ml-64' : 'ml-16'
+        className={`flex-1 p-4 sm:p-8 transition-all duration-300 transform ${
+          isOpen ? 'ml-16 sm:ml-64' : 'ml-16'
         }`}
       >
-        <div className="flex h-full gap-4">
-          {/* First card: 60% width */}
+        <div className="flex flex-col sm:flex-row h-full gap-4">
+          {/* First card: 100% width on mobile, 60% width on larger screens */}
           <div className="flex-1 bg-gray-800 p-6 rounded-lg shadow-md flex flex-col h-full" style={{ flex: '3 1 60%' }}>
-            
             <div className="bg-gray-800 p-4 rounded-lg text-white flex-grow flex flex-col items-center justify-center">
               {/* Display the formatted time */}
-              <h2 className="text-4xl mb-4 ">{formatTime(time)}</h2>
+              <h2 className="text-4xl mb-4">{formatTime(time)}</h2>
 
               {/* Buttons logic */}
               {!isRunning ? (
                 <button
-                  className="bg-gray-700 hover:bg-gray-500 text-white  py-2 px-4 rounded"
+                  className="bg-gray-700 hover:bg-gray-500 text-white py-2 px-4 rounded"
                   onClick={handleStart}
                 >
-                   <FontAwesomeIcon icon={faPlay} className='mr-2' />Start Timer
+                  <FontAwesomeIcon icon={faPlay} className="mr-2" /> Start Timer
                 </button>
               ) : (
                 <>
-                  <div className="flex space-x-4">
+                  <div className="flex space-x-2 sm:space-x-4">
                     {!isPaused ? (
                       <button
-                        className="bg-gray-700 hover:bg-gray-500 text-white  py-2 px-4 rounded"
+                        className="bg-gray-700 hover:bg-gray-500 text-white py-2 px-4 rounded"
                         onClick={handlePause}
                       >
-                       <FontAwesomeIcon icon={faPause} className='mr-2'/> Pause
+                        <FontAwesomeIcon icon={faPause} className="mr-2" /> Pause
                       </button>
                     ) : (
                       <button
-                        className="bg-gray-700 hover:bg-gray-500 text-white  py-2 px-4 rounded"
+                        className="bg-gray-700 hover:bg-gray-500 text-white py-2 px-4 rounded"
                         onClick={handleResume}
                       >
-                        <FontAwesomeIcon icon={faPlay} className='mr-2' /> Resume
+                        <FontAwesomeIcon icon={faPlay} className="mr-2" /> Resume
                       </button>
                     )}
                     <button
                       className="bg-gray-700 hover:bg-gray-500 text-white py-2 px-4 rounded"
                       onClick={handleLap}
                     >
-                      <FontAwesomeIcon icon={faFlag} className='mr-2'/> Lap
+                      <FontAwesomeIcon icon={faFlag} className="mr-2" /> Lap
                     </button>
                     <button
-                      className="bg-gray-700 hover:bg-gray-600 text-white  py-2 px-4 rounded"
+                      className="bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded"
                       onClick={handleReset}
                     >
-                      <FontAwesomeIcon icon={faRepeat} className='mr-2'/>Reset
+                      <FontAwesomeIcon icon={faRepeat} className="mr-2" /> Reset
                     </button>
                   </div>
                 </>
@@ -128,16 +127,14 @@ const StopwatchPage = () => {
             </div>
           </div>
 
-          {/* Second card: 40% width */}
+          {/* Second card: 100% width on mobile, 40% width on larger screens */}
           <div className="flex-1 bg-gray-800 p-6 rounded-lg shadow-md flex flex-col h-full" style={{ flex: '2 1 40%' }}>
-           
-            <div className="bg-gray-800 p-4 rounded-lg text-white flex-grow ">
+            <div className="bg-gray-800 p-4 rounded-lg text-white flex-grow">
               {/* Display lap times in a table */}
               {laps.length === 0 ? (
-                <div className='flex items-center justify-center my-40'>
-                   <p>No laps recorded</p>
+                <div className="flex items-center justify-center h-full">
+                  <p>No laps recorded</p>
                 </div>
-               
               ) : (
                 <table className="table-auto w-full text-white">
                   <thead>
