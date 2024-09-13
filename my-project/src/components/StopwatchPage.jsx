@@ -129,7 +129,7 @@ const StopwatchPage = () => {
 
           {/* Second card: 100% width on mobile, 40% width on larger screens */}
           <div className="flex-1 bg-gray-800 p-6 rounded-lg shadow-md flex flex-col h-full" style={{ flex: '2 1 40%' }}>
-            <div className="bg-gray-800 p-4 rounded-lg text-white flex-grow">
+            <div className="bg-gray-800 p-4 rounded-lg text-white flex-grow overflow-y-auto">
               {/* Display lap times in a table */}
               {laps.length === 0 ? (
                 <div className="flex items-center justify-center h-full">
